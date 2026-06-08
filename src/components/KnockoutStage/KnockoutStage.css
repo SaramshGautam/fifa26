@@ -1,0 +1,66 @@
+.bracket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  gap: 0.65rem;
+}
+
+/* ── Bracket slot ────────────────────────────────────────────── */
+.bracket-slot {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1.5px dashed var(--color-border);
+  background: var(--color-surface-alt);
+  cursor: pointer;
+  min-height: 46px;
+  transition: all var(--transition-fast);
+}
+.bracket-slot:hover {
+  border-color: var(--color-gold);
+  background: #1a2e1e;
+}
+
+.bracket-slot--filled {
+  border-style: solid;
+  border-color: var(--color-border);
+  background: var(--color-surface);
+}
+.bracket-slot--filled:hover {
+  border-color: var(--color-danger);
+  background: #1e1515;
+}
+
+.bracket-slot__flag {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  width: 1.6rem;
+  text-align: center;
+}
+
+.bracket-slot__name {
+  font-size: 0.84rem;
+  font-weight: 500;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bracket-slot__remove {
+  font-size: 0.7rem;
+  color: var(--color-danger);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  flex-shrink: 0;
+}
+.bracket-slot--filled:hover .bracket-slot__remove {
+  opacity: 1;
+}
+
+.bracket-slot__empty {
+  font-size: 0.78rem;
+  color: var(--color-text-faint);
+  font-style: italic;
+}

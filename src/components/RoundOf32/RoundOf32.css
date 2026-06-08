@@ -1,0 +1,210 @@
+/* ── Warning banner ─────────────────────────────────────────── */
+.r32__warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  max-width: 480px;
+}
+.r32__warning-icon   { font-size: 1.5rem; flex-shrink: 0; }
+.r32__warning-title  { font-family: var(--font-condensed); font-weight: 700; font-size: 0.95rem; letter-spacing: 1px; color: var(--color-gold); margin-bottom: 0.3rem; }
+.r32__warning-body   { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; }
+
+/* ── Thirds panel ───────────────────────────────────────────── */
+.r32__thirds-panel {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+.r32__thirds-panel--collapsed { }
+
+.r32__thirds-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text);
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: left;
+  transition: background var(--transition-fast);
+}
+.r32__thirds-toggle:hover { background: #1a2e1e; }
+
+.r32__thirds-badge {
+  display: inline-block;
+  margin-left: 0.75rem;
+  background: rgba(212,175,55,0.15);
+  color: var(--color-gold);
+  border-radius: var(--radius-sm);
+  padding: 0.15rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.r32__thirds-chevron { font-size: 0.7rem; color: var(--color-text-muted); }
+
+.r32__thirds-body { padding: 0 1.25rem 1.25rem; }
+.r32__thirds-hint {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.85rem;
+  line-height: 1.5;
+}
+
+.r32__thirds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 0.5rem;
+}
+
+.r32__third-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.75rem;
+  background: var(--color-surface-alt);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+.r32__third-btn:hover:not(:disabled) { border-color: var(--color-gold); background: #1a2e1e; }
+.r32__third-btn--chosen { background: #1e3a26; border-color: var(--color-gold); }
+.r32__third-btn--disabled { opacity: 0.35; cursor: not-allowed; }
+
+.r32__third-flag  { font-size: 1.3rem; flex-shrink: 0; }
+.r32__third-info  { flex: 1; display: flex; flex-direction: column; gap: 1px; }
+.r32__third-name  { font-size: 0.83rem; font-weight: 500; }
+.r32__third-group { font-family: var(--font-condensed); font-size: 0.68rem; color: var(--color-text-muted); letter-spacing: 0.5px; }
+.r32__third-check { color: var(--color-gold); font-size: 0.85rem; flex-shrink: 0; }
+.r32__third-x     { color: var(--color-text-faint); font-size: 0.75rem; flex-shrink: 0; }
+
+/* ── Matchups header ────────────────────────────────────────── */
+.r32__matches-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.r32__matches-title {
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.r32__matches-count {
+  font-family: var(--font-condensed);
+  font-size: 0.78rem;
+  color: var(--color-gold);
+  letter-spacing: 0.5px;
+}
+
+/* ── Matchup grid ───────────────────────────────────────────── */
+.r32__matchups {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+}
+
+/* ── Single match card ──────────────────────────────────────── */
+.r32-match {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  transition: border-color var(--transition-fast);
+}
+.r32-match--decided { border-color: rgba(82, 183, 136, 0.35); }
+
+.r32-match__label {
+  font-family: var(--font-condensed);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  margin-bottom: 0.15rem;
+}
+
+.r32-match__vs {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--color-text-faint);
+  line-height: 1;
+  margin: 0.1rem 0;
+}
+
+/* ── Team button inside match ───────────────────────────────── */
+.r32-team {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-dim);
+  background: var(--color-surface-alt);
+  cursor: pointer;
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+.r32-team:hover { border-color: var(--color-gold); background: #1a2e1e; }
+
+.r32-team--winner {
+  background: #1e3a26;
+  border-color: var(--color-green-accent);
+}
+.r32-team--loser {
+  opacity: 0.4;
+}
+.r32-team--loser:hover {
+  opacity: 1;
+}
+
+.r32-team--empty {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.6rem;
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--color-border);
+  background: transparent;
+  cursor: default;
+}
+
+.r32-team__flag { font-size: 1.2rem; flex-shrink: 0; }
+.r32-team__info { flex: 1; display: flex; flex-direction: column; gap: 1px; }
+.r32-team__name { font-size: 0.82rem; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.r32-team__role { font-family: var(--font-condensed); font-size: 0.65rem; color: var(--color-text-muted); letter-spacing: 0.3px; }
+.r32-team__tick { color: var(--color-green-accent); font-size: 0.85rem; flex-shrink: 0; }
+.r32-team__placeholder { font-size: 0.8rem; color: var(--color-text-faint); font-style: italic; }
+
+@media (max-width: 600px) {
+  .r32__matchups { grid-template-columns: 1fr; }
+  .r32__thirds-grid { grid-template-columns: 1fr 1fr; }
+}

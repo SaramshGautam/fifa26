@@ -1,0 +1,71 @@
+.header {
+  background: linear-gradient(135deg, #0d2b18 0%, #1a472a 50%, #0d2b18 100%);
+  border-bottom: 2px solid var(--color-gold);
+  padding: 0.85rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 1rem;
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header__trophy {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.header__title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  letter-spacing: 3px;
+  color: var(--color-gold);
+  line-height: 1;
+}
+
+.header__sub {
+  display: block;
+  font-family: var(--font-condensed);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 0.15rem;
+}
+
+.header__user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__username {
+  font-family: var(--font-condensed);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.75rem 1rem;
+  }
+  .header__title {
+    font-size: 1.3rem;
+  }
+  .header__sub {
+    display: none;
+  }
+  .header__username {
+    display: none;
+  }
+}

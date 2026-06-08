@@ -1,0 +1,138 @@
+.ms__warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1.5px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  max-width: 480px;
+}
+.ms__warning-icon  { font-size: 1.5rem; flex-shrink: 0; }
+.ms__warning-title { font-family: var(--font-condensed); font-weight: 700; font-size: 0.95rem; letter-spacing: 1px; color: var(--color-gold); margin-bottom: 0.3rem; }
+.ms__warning-body  { font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.5; }
+
+/* ── Progress row ────────────────────────────────────────────── */
+.ms__progress-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.ms__progress-label {
+  font-family: var(--font-condensed);
+  font-size: 0.78rem;
+  color: var(--color-gold);
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+/* ── Matchup grid ────────────────────────────────────────────── */
+.ms__matchups {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0.75rem;
+}
+
+/* ── Single match card ───────────────────────────────────────── */
+.ms-match {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 0.9rem;
+  transition: border-color var(--transition-fast);
+}
+.ms-match--decided {
+  border-color: rgba(82, 183, 136, 0.35);
+}
+
+.ms-match__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+.ms-match__no {
+  font-family: var(--font-condensed);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+.ms-match__result {
+  font-family: var(--font-condensed);
+  font-size: 0.72rem;
+  color: var(--color-green-accent);
+  letter-spacing: 0.3px;
+}
+
+.ms-match__teams {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.ms-match__vs {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: var(--color-text-faint);
+  line-height: 1;
+}
+
+/* ── Team button ─────────────────────────────────────────────── */
+.ms-team {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-dim);
+  background: var(--color-surface-alt);
+  cursor: pointer;
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+  text-align: left;
+  min-height: 44px;
+}
+.ms-team:hover:not(:disabled) {
+  border-color: var(--color-gold);
+  background: #1a2e1e;
+}
+.ms-team--winner {
+  background: #1e3a26;
+  border-color: var(--color-green-accent);
+}
+.ms-team--loser {
+  opacity: 0.38;
+}
+.ms-team--loser:hover {
+  opacity: 1;
+}
+.ms-team--tbd {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius-md);
+  border: 1px dashed var(--color-border);
+  background: transparent;
+  cursor: default;
+  min-height: 44px;
+  justify-content: center;
+}
+
+.ms-team__flag { font-size: 1.25rem; flex-shrink: 0; }
+.ms-team__info { flex: 1; display: flex; flex-direction: column; gap: 1px; }
+.ms-team__name { font-size: 0.85rem; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ms-team__meta { font-family: var(--font-condensed); font-size: 0.65rem; color: var(--color-text-muted); letter-spacing: 0.3px; }
+.ms-team__tick { color: var(--color-green-accent); font-size: 0.85rem; flex-shrink: 0; }
+.ms-team__tbd  { font-size: 0.75rem; color: var(--color-text-faint); font-weight: 500; }
+.ms-team__placeholder { font-size: 0.68rem; color: var(--color-text-faint); font-style: italic; }
+
+@media (max-width: 600px) {
+  .ms__matchups { grid-template-columns: 1fr; }
+}

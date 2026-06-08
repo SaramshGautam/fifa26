@@ -1,0 +1,351 @@
+/* ─── Reset & Base ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Design Tokens ─────────────────────────────────────────── */
+:root {
+  /* Brand */
+  --color-gold:        #d4af37;
+  --color-gold-light:  #e8c547;
+  --color-gold-dim:    #b8960c;
+
+  /* Greens */
+  --color-green-deep:  #0a0f0d;
+  --color-green-dark:  #0d1a10;
+  --color-green-mid:   #111a14;
+  --color-green-rich:  #1a472a;
+  --color-green-light: #2d6a4f;
+  --color-green-accent:#52b788;
+
+  /* UI surfaces */
+  --color-bg:          #0a0f0d;
+  --color-surface:     #111a14;
+  --color-surface-alt: #0d1a10;
+  --color-border:      #1e3a28;
+  --color-border-dim:  #162b1e;
+
+  /* Text */
+  --color-text:        #e8f5e9;
+  --color-text-muted:  #6b8f71;
+  --color-text-faint:  #3d5c43;
+
+  /* Semantic */
+  --color-danger:      #c1121f;
+  --color-danger-bg:   rgba(193, 18, 31, 0.12);
+
+  /* Typography */
+  --font-display:      'Bebas Neue', sans-serif;
+  --font-condensed:    'Barlow Condensed', sans-serif;
+  --font-body:         'Barlow', sans-serif;
+
+  /* Spacing scale */
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-2xl: 3rem;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+
+  /* Transitions */
+  --transition-fast:   0.12s ease;
+  --transition-normal: 0.2s ease;
+}
+
+/* ─── Global ─────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Typography helpers ─────────────────────────────────────── */
+.display-font   { font-family: var(--font-display); }
+.condensed-font { font-family: var(--font-condensed); }
+
+/* ─── Utility: visually-hidden ───────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: var(--color-green-dark); }
+::-webkit-scrollbar-thumb  { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
+
+/* ─── Buttons ────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  line-height: 1;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn--gold {
+  background: var(--color-gold);
+  color: var(--color-green-deep);
+}
+.btn--gold:not(:disabled):hover {
+  background: var(--color-gold-light);
+  transform: translateY(-1px);
+}
+.btn--gold:not(:disabled):active {
+  transform: translateY(0);
+}
+
+.btn--outline {
+  background: transparent;
+  border: 1.5px solid var(--color-gold);
+  color: var(--color-gold);
+}
+.btn--outline:not(:disabled):hover {
+  background: var(--color-gold);
+  color: var(--color-green-deep);
+}
+
+.btn--danger {
+  background: transparent;
+  border: 1.5px solid var(--color-danger);
+  color: var(--color-danger);
+}
+.btn--danger:not(:disabled):hover {
+  background: var(--color-danger);
+  color: #fff;
+}
+
+.btn--ghost {
+  background: transparent;
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+.btn--ghost:not(:disabled):hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.btn--sm {
+  font-size: 0.72rem;
+  padding: 0.3rem 0.75rem;
+}
+
+.btn--lg {
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+}
+
+/* ─── Form fields ────────────────────────────────────────────── */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: var(--space-md);
+}
+
+.field__label {
+  font-family: var(--font-condensed);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.field__input {
+  width: 100%;
+  background: var(--color-surface-alt);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.9rem;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+.field__input:focus {
+  border-color: var(--color-gold);
+}
+.field__input::placeholder {
+  color: var(--color-text-faint);
+}
+
+.field__error {
+  font-size: 0.8rem;
+  color: var(--color-danger);
+}
+
+/* ─── Card ───────────────────────────────────────────────────── */
+.card {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.card--gold-border {
+  border-color: var(--color-gold);
+}
+
+/* ─── Stat row ───────────────────────────────────────────────── */
+.stats-row {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem var(--space-md);
+  flex: 1;
+  min-width: 90px;
+}
+
+.stat-card__value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--color-gold);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.stat-card__label {
+  font-family: var(--font-condensed);
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 0.2rem;
+}
+
+/* ─── Progress bar ───────────────────────────────────────────── */
+.progress-bar {
+  height: 4px;
+  background: var(--color-border);
+  border-radius: 2px;
+  margin-bottom: var(--space-lg);
+  overflow: hidden;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-green-accent), var(--color-gold));
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+/* ─── Section header ─────────────────────────────────────────── */
+.section-header {
+  margin-bottom: var(--space-lg);
+}
+
+.section-header__title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  color: var(--color-gold);
+  margin-bottom: 0.2rem;
+}
+
+.section-header__sub {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ─── Overlay / Modal backdrop ───────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+}
+
+/* ─── Empty state ────────────────────────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-md);
+  color: var(--color-text-muted);
+}
+.empty-state__icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: var(--space-md);
+}
+.empty-state__title {
+  font-family: var(--font-display);
+  letter-spacing: 2px;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  font-size: 1.2rem;
+}
+.empty-state__body {
+  font-size: 0.9rem;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .stats-row {
+    gap: var(--space-sm);
+  }
+  .stat-card__value {
+    font-size: 1.3rem;
+  }
+}

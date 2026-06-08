@@ -1,0 +1,116 @@
+.picker {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-gold);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 440px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.picker__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.picker__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  color: var(--color-gold);
+}
+
+.picker__search {
+  width: 100%;
+  background: var(--color-surface-alt);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.9rem;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+.picker__search:focus {
+  border-color: var(--color-gold);
+}
+.picker__search::placeholder {
+  color: var(--color-text-faint);
+}
+
+.picker__list {
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.picker__item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+.picker__item:hover {
+  background: #1a2e1e;
+}
+.picker__item--taken {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.picker__item--taken:hover {
+  background: transparent;
+}
+
+.picker__flag {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  width: 1.8rem;
+  text-align: center;
+}
+
+.picker__name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  flex: 1;
+}
+
+.picker__conf {
+  font-family: var(--font-condensed);
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.5px;
+}
+
+.picker__group {
+  font-family: var(--font-condensed);
+  font-size: 0.68rem;
+  color: var(--color-text-faint);
+  letter-spacing: 0.5px;
+  min-width: 3rem;
+  text-align: right;
+}
+
+.picker__taken-badge {
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  margin-left: 0.25rem;
+}
+
+.picker__empty {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  padding: 2rem 1rem;
+  font-style: italic;
+}
