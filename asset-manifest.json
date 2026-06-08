@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fifa2026/static/css/main.140b4864.css",
+    "main.js": "/fifa2026/static/js/main.5ef7954e.js",
+    "index.html": "/fifa2026/index.html",
+    "main.140b4864.css.map": "/fifa2026/static/css/main.140b4864.css.map",
+    "main.5ef7954e.js.map": "/fifa2026/static/js/main.5ef7954e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.140b4864.css",
+    "static/js/main.5ef7954e.js"
+  ]
+}
