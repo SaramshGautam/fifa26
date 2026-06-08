@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/fifa26/static/css/main.140b4864.css",
-    "main.js": "/fifa26/static/js/main.5ef7954e.js",
+    "main.js": "/fifa26/static/js/main.a33b45aa.js",
     "index.html": "/fifa26/index.html",
     "main.140b4864.css.map": "/fifa26/static/css/main.140b4864.css.map",
-    "main.5ef7954e.js.map": "/fifa26/static/js/main.5ef7954e.js.map"
+    "main.a33b45aa.js.map": "/fifa26/static/js/main.a33b45aa.js.map"
   },
   "entrypoints": [
     "static/css/main.140b4864.css",
-    "static/js/main.5ef7954e.js"
+    "static/js/main.a33b45aa.js"
   ]
 }
